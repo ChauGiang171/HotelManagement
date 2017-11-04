@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+<style type="text/css">
+    .btn span.glyphicon {
+        opacity: 0;
+    }
+
+    .btn.active span.glyphicon {
+        opacity: 1;
+    }
+</style>
+<div class="section" style="margin-top: 60px">
+    <div class="row margin-bottom">
+        <div class="col-md-6">
+            <div class="input-group input-group-sm">
+                <select class="form-control" id="select-room" onchange="timKiem()">
+                    <option value="0">ALL</option>
+                    <option value="1">SINGLE ROOM</option>
+                    <option value="2">DOUBLE ROOM</option>
+                </select>
+
+                <span class="input-group-btn">
+                     <input type="button" class="btn btn-primary"
+                            autocomplete="off" 
+                            id="sortType" onclick="changeSortType()" 
+                            value="Rental Price DESC" />
+                </span>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="row">
+        <div class="col-md-12" id="content-result">
+            
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        timKiem();
+    })
+    function changeSortType() {
+        if (document.getElementById("sortType").value == "Rental Price DESC") {
+            document.getElementById("sortType").value = "Rental Price ASC";
+        } else {
+            document.getElementById("sortType").value = "Rental Price DESC";
+        }
+        timKiem();
+    }
+    
+    function timKiem() {
+        //window.alert(document.getElementById("sortType").value);
+        //ASC
+        let key_word_gia = 1;
+        if (document.getElementById("sortType").value == "Rental Price DESC") {
+            key_word_gia = 2;
+        } else {
+            key_word_gia = 1;
+        }
+        let key_word_room = $('#select-room').val();
+
+        $.ajax({
+            method: 'POST',
+            url: '/Home/TimKiemTheoLoaiPhong',
+            data: {
+                roomType: key_word_room,
+                sortType: key_word_gia
+            }
+        }).done(
+            function (response) {
+                
+                $('#content-result').html(response);
+            })
+         .fail(function (error) {
+                console.log(error);
+                alert('Error :((');
+         })
+    }
+
+
+</script>
+

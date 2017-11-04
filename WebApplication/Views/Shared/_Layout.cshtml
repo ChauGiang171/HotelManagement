@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    
+    <script src="~/Scripts/jquery.validate.min.js"></script>s
+    <script src="~/Scripts/select2.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/tether.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Scripts/jquery-validate-plugin-2cwebvn/style.css" rel="stylesheet"/>
+    <script src="~/Scripts/jquery-validate-plugin-2cwebvn/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery-validate-plugin-2cwebvn/localization/messages_vi.js"></script>
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/select2.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <script src="~/admin-lte/js/adminlte.js"></script>
+    <link href="~/admin-lte/css/AdminLTE.css" rel="stylesheet" />
+    <link href="~/admin-lte/css/alt/AdminLTE-fullcalendar.css" rel="stylesheet" />
+    <link href="~/admin-lte/css/alt/AdminLTE-select2.css" rel="stylesheet" />
+    <link href="~/admin-lte/css/skins/_all-skins.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("SEA SIDE SOUTH PARK HOTEL", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse" style="font-family:'Bell MT'">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li> @Html.ActionLink("Search", "Search", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li> @Html.ActionLink("Account", "Account", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>                   
+                    <li> @Html.ActionLink("RoomCancel", "RoomCancel", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+               
+                </ul>
+            </div>
+        </div>     
+    </div>
+
+    <div class="container-fluid" style="padding-left:15px; padding-right:-5px">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Đặng Châu Giang</p>
+        </footer>
+    </div>
+
+
+</body>
+</html>

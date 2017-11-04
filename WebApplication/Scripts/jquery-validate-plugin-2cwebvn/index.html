@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>jQuery Validate - plugin kiểm tra dữ liệu nhập trên Form - 2Cwebvn</title>
+	<link type="text/css" href="style.css" rel="stylesheet">	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>	<script type="text/javascript" src="jquery.validate.min.js"></script>
+	<script type="text/javascript" src="localization/messages_vi.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#contact").validate({
+				errorElement: "span", // Định dạng cho thẻ HTML hiện thông báo lỗi
+				rules: {
+					cpassword: {
+						equalTo: "#password" // So sánh trường cpassword với trường có id là password
+					},
+					min_field: { min: 5 }, //Giá trị tối thiểu
+					max_field: { max : 10 }, //Giá trị tối đa
+					range_field: { range: [4,10] }, //Giá trị trong khoảng từ 4 - 10
+					rangelength_field: { rangelength: [4,10] } //Chiều dài chuỗi trong khoảng từ 4 - 10 ký tự
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<div id="container">
+	<form id="contact" method="post" action="submit.html" enctype="multipart/form-data" class="contact-form" >
+		<center><h2>jQuery Validate - plugin kiểm tra dữ liệu nhập trên Form - 2Cwebvn</h2></center>
+		<ul>
+			<li class="tt">--- Các thành phần dược hổ trợ validate jquery ---</li>
+			<li>
+				<label for="name">Username <span class="rq"> * </span></label>
+				<input class="required" minlength="6" id="username" name="username" type="text" class="text" />
+			</li>
+			<li>
+				<label for="name">Mật khẩu <span class="rq"> * </span></label>
+				<input class="required" minlength="6" id="password" name="password" type="text" class="text"/>
+			</li><li>
+				<label for="name">Nhập lại mật khẩu <span class="rq"> * </span></label>
+				<input class="required" name="cpassword" type="text" class="text" tabindex="3" />
+			</li>
+			<li>
+				<label for="email">Địa chỉ email <span class="rq"> * </span></label>
+				<input class="required email" id="email" name="email" type="text" class="text"/>
+			</li>
+			<li>
+				<label for="mobi">Điện thoại</label>
+				<input id="mobi" class="digits" maxlength="12" name="mobi" type="text" class="text"/>
+			</li>
+			<li>
+				<label for="url">Website</label>
+				<input id="url" class="url" name="url" type="text" class="text" tabindex="6" />
+			</li>
+			<li>
+				<label for="file">Ảnh đại diện</label>
+				<input type="file" accept="rar|zip|txt|jpeg|gif|png" />
+			</li>
+			
+			<li class="tt">--- Kiểm tra các thành phần thông qua name ---</li>
+			<li>
+				<label for="min">Min</label>
+				<input id="min_field" name="min_field" type="text"  />
+			</li>
+			<li>
+				<label for="max">Max</label>
+				<input id="max_field" name="max_field" type="text"  />
+			</li>
+			<li>
+				<label for="range">Range</label>
+				<input id="range_field" name="range_field" type="text"  />
+			</li>
+			<li>
+				<label for="rangelength">Range Length</label>
+				<input id="rangelength_field" name="rangelength_field" type="text"  />
+			</li>
+			
+			<li>
+				<input name="send" class="btTxt submit" type="submit" value="Submit"/>
+			</li>
+		</ul>
+	</form> 
+</div><!--End container-->
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Pay";
+}
+
+<h2>Pay</h2>
+
+
+@{
+    ViewBag.Title = "Thanhtoan";
+}
+
+<div>
+    <section>
+        <div class="login-box">
+            <div class="register-logo">
+                <br> <br> <br>
+                <h1>SEA SIDE SOUTH PARK HOTEL</h1>
+            </div>
+            <div class="login-box-body">
+
+                <p class="login-box-msg">PAYMENT COSTA</p>
+
+                <form action="#" method="get">
+                    <div class="form-group has-feedback">
+                        Select Room Code:
+                        <select class="form-control">
+                            <option value="NULL">AE4RT</option>
+                            <option value="NULL">K54HS</option>
+                            <option value="NULL">M4A1S</option>
+                            <option value="NULL">SPH01</option>
+                            <option value="NULL">SPH02</option>
+                            <option value="NULL">SPH03</option>
+                            <option value="NULL">SPH04</option>
+                            <option value="NULL">SPH05</option>
+                            <option value="NULL">SPH06</option>
+                            <option value="NULL">SPH07</option>
+                            <option value="NULL">SPH08</option>
+                            <option value="NULL">SPH09</option>
+                            <option value="NULL">SPH10</option>
+
+
+                        </select>
+                    </div>
+                    <div class="form-group has-feedback">
+                        Select Bank:
+                        <select class="form-control">
+                            <option>AgriBank</option>
+                            <option>DongABank</option>
+                            <option>ViettinBank</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="code" class="btn btn-primary btn-block btn-flat" onclick="thanhtoan()">Pay</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function thanhtoan()
+    {
+        alert('Thanh toán thành công !!!');
+    }
+
+</script>
+

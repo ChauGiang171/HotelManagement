@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebApplication.Entities.RoomBooking>
+    @{
+        ViewBag.Title = "Huyphong";
+    }
+<style>
+	h1 {
+		font-family: Batang;
+		text-shadow: 5px 5px 5px cadetblue;
+	}`
+</style>
+
+    <div class="login-box">
+        <div class="login-logo">
+            <h1>CANCEL RESERVED ROOM</h1>
+        </div>
+        <div class="login-box-body" id="content">
+
+            <form>
+                <div class="form-group has-feedback">
+                    <h2>ROOM CANCEL INFORMATION</h2>
+					<br /><br />
+                    <input type="text" placeholder="RoomBookingID" id="txtRoomBookingID" size="30%"/>
+                </div>
+           <br /><br />
+                <div class="form-group">
+                    <button onclick="cancelRoomBooking()" type="button" id="btnCancelBooking" class="btn btn-primary btn-block btn-flat">Cancel Reserved Room</button>
+                </div>
+            </form>
+            <div id="error"></div>
+        </div>
+    </div>
+
+    <!--Check-->
+    <script>
+        //checkemail
+        function cancelRoomBooking()
+        {
+            console.log("Checking RoomBooking ID");
+            var roomBookingID = document.getElementById("txtRoomBookingID").value;
+            $.ajax({
+                method: 'GET',
+                dataType: 'json',
+                url: '/RoomBookings/CancelReservedRoom',
+                data: {
+                    roomBookingID: roomBookingID
+                }
+            }).done(
+                function (response) {
+
+                    console.log(response);
+                    if (response.Status == true) {
+                        document.getElementById("content").innerHTML = "<strong>Please check your email to confirm cancle room booking</strong>"
+                    } else {
+                        document.getElementById("error").innerHTML = "<strong>Can not found your RoomBooking ID!</strong>"
+                    }
+                })
+                .fail(function (error) {
+                    // conole.log(error);
+                    alert('Error :((');
+
+                })
+                
+        }
+       
+     
+   </script>

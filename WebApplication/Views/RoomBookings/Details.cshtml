@@ -1,0 +1,118 @@
+﻿@model WebApplication.Entities.RoomBooking
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+   
+  
+    #table
+    {
+        width: 650px;
+        height: auto;
+        border: 1px solid;
+        margin: 0px auto;
+        background-color: aliceblue;
+        margin-top: 30px;
+        text-align: left;
+        margin: 0px auto;
+        border: 1px solid gray;
+    }
+
+    h1 {
+        font-family: Batang;
+        text-shadow: 5px 5px 5px cadetblue;
+    }
+
+    table {
+        margin-left: 50px;
+        height: 80px;
+        width: 600px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    tr td {
+        padding: 10px;
+        margin: 30px;
+    }
+
+</style>
+<div><br /><br /><br />
+    <h1 align="center"> ROOMBOOKING DETAIL</h1>
+    <hr />
+    <table id="table">
+       
+        <tr>
+           <td>Room BookingID:</td> 
+            <td>
+                @Html.DisplayFor(model => model.RoomBookingID)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Employee Name:</td>
+            <td>
+                @Html.DisplayFor(model => model.Employee.Name)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Person:</td>
+            <td>
+                @Html.DisplayFor(model => model.Person)
+            </td>
+        </tr>
+
+        <tr>
+            <td>RoomID:</td>
+            <td>
+                @Html.DisplayFor(model => model.RoomID)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Customer Name:</td>
+            <td>
+                @Html.DisplayFor(model => model.Name)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Phone:</td>
+            <td>
+                @Html.DisplayFor(model => model.Phone)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td>
+                @Html.DisplayFor(model => model.Email)
+            </td>
+        </tr>
+
+        <tr>
+            <td>CheckInDate:</td>
+            <td>
+                @Html.DisplayFor(model => model.CheckinDate)
+            </td>
+        </tr>
+
+        <tr>
+            <td>CheckOutDate:</td>
+            <td>
+                @Html.DisplayFor(model => model.CheckoutDate)
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoomBookingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

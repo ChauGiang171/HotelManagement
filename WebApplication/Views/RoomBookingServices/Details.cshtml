@@ -1,0 +1,42 @@
+﻿@model WebApplication.Entities.RoomBookingService
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RoomBookingService</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomBooking.RoomID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomBooking.RoomID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomService.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomService.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OderDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

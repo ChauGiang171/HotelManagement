@@ -1,0 +1,105 @@
+﻿@model WebApplication.Entities.CustomerTV
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    #table {
+        width: 650px;
+        height: auto;
+        border: 1px solid;
+        margin: 0px auto;
+        background-color: aliceblue;
+        margin-top: 30px;
+        text-align: left;
+        margin: 0px auto;
+        border: 1px solid gray;
+    }
+
+    h1 {
+        font-family: Batang;
+        text-shadow: 5px 5px 5px cadetblue;
+    }
+
+    table {
+        margin-left: 50px;
+        height: 80px;
+        width: 600px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    tr td {
+        padding: 10px;
+        margin: 30px;
+    }
+</style>
+
+
+
+<div>
+    <br /><br /><br />
+    <h1 align="center"> CUSTOMER INFORMATION</h1>
+    <hr />
+    <table id="table">
+
+        <tr>
+            <td>CustomerID:</td>
+            <td>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Customer Name:</td>
+            <td>
+                @Html.DisplayNameFor(model => model.Name)
+            </td>
+        </tr>
+
+        <tr>
+            <td>BirthDay:</td>
+            <td>
+                @Html.DisplayNameFor(model => model.Birthday)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Phone:</td>
+            <td>
+                @Html.DisplayNameFor(model => model.Phone)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td>
+                @Html.DisplayFor(model => model.Email)
+            </td>
+        </tr>
+
+        <tr>
+            <td>CumilativePoint:</td>
+            <td>
+                @Html.DisplayNameFor(model => model.CumilativePoint)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Address:</td>
+            <td>
+                @Html.DisplayFor(model => model.Address)
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

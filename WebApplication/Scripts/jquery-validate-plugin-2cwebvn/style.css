@@ -1,0 +1,30 @@
+html{background:url(bg_2cwebvn.png)}
+body{
+	margin:17px 0 15px 0;
+	padding:0;
+	text-align:center;
+	font-size:small;
+	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif
+}
+#container{
+	margin:20px auto 10px;
+	width:780px;
+	text-align:left;
+	background:#fff;
+	border:1px solid #ccc;
+	-webkit-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+	-moz-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+	-o-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+	box-shadow:rgba(0,0,0,0.2) 0px 0px 5px
+}
+
+h2{color:#DB2E66;}
+form ul{margin:0;padding:0;list-style-type:none}
+form ul li{padding-bottom: 7px}
+form ul li.tt{margin:10px 0px; font-weight:bold;}input{color: #000}textarea{width: 300px; height: 100px}
+label{display: block; padding: 7px 0; float: left; width: 180px}
+input[type="submit"] {padding: 2px 30px}input[name="send"]{margin-left: 180px}
+.contact-form{margin:20px 14px 0 14px;padding:0 0 20px 0;position:relative}
+.contact-form li{}
+.rq, .error{color: red}
+.hide {display: none}

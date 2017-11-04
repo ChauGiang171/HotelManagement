@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = "Account";
+}
+
+<style>
+    #sex
+    {
+        float:left;
+    }
+
+
+</style>
+
+@{
+    ViewBag.Title = "Account";
+}
+
+<div class="session">
+    <section>
+        <div class="register-box ">
+            <div class="register-logo">
+                <div class="register-box-body">
+                    <form action="Login.html" method="get">
+                        <p style="text-align: center">SIGN UP</p>
+                        <div class="form-group has-feedback">
+							<input type="email" id="email" class="form-control" placeholder="Email" required
+								   pattern="^[a-z0-9._%+-]+&#64[a-z0-9.-]+\.[a-z]{2,4}$" title="This is not an email.">                           
+                        </div>
+                        <div class="form-group has-feedback">
+							<input type="text" id="name" class="form-control" placeholder="Full Name" required
+								   pattern="[a-zz A-Z]{5,}" title="Minimum 5 characters, no numbers or special characters.">               
+                        </div>
+                        <div>
+                            <font size="3"><span id="sex">Gender</span></font>
+                            <input type="radio" checked="checked" id="rad_male" name="gender"/><font size="3">Male</font>
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="radio"  name="gender" id="rad_female" /><font size="3">Female</font>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <font size="3"><span id="sex">BirthDay</span></font>
+                            <input type="date" id="birthday" class="form-control" placeholder="Birthday" required
+                                   pattern="[0-9]{6,}" title="Wrong phone numbers.">
+                        </div> 
+                        <div class="form-group has-feedback">
+                            <input type="text" id="phone" class="form-control" placeholder="Phone Number" required
+                                   pattern="(09|01)[0-9]{8,9}" title="Wrong phone numbers.">
+                        </div>
+                       
+                        <div class="form-group has-feedback">
+                            <input type="password" id="password" class="form-control" placeholder="Password" required
+                                   pattern="{6,16}" title="Minimum 6 characters, max 16 characters.">
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password" id="confirm_password" class="form-control" onblur="validatePassword()" placeholder="Re-input password" required
+                                   pattern="{6,16}" title="Wrong re-input.">
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="text" id="address" class="form-control" placeholder="Address" required
+                                   pattern="[a-z0-9A-Z]{5,20}" title="Minimum 5 characters, max 20 characters, no spaces or special characters.">
+                        </div>
+                        <div class="col-lg-offset-0">
+                            <input type="button" class="btn btn-primary btn-block btn-flat"  
+                                   onclick="createAccount()"
+                                   value="Sign Up" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+				<script>
+
+					function createAccount() {
+
+						//Create Account
+						if ((document.getElementById("email").value) == "vungho@hotmail.com.vn")
+							alert("Email already exists !!!");
+						else {
+							accountConfirm();
+						}
+					}
+
+					function accountConfirm() {
+						let data = {
+							CustomerID: "",
+							Name: "",
+							Birthday: "",
+							Phone: "",
+							Email: "",
+							Gender: "",
+							CumilativePoint: 0,
+							Address: ""
+						}
+						//get data
+						if (document.getElementById("rad_male").checked == true) {
+							let inbirthday = new Date($('#birthday').val());
+							data.Name = $('#name').val();
+							data.Phone = $('#phone').val();
+							data.Email = $('#email').val();
+							data.Gender = true;
+							data.Address = $('#address').val();
+							data.Birthday = inbirthday.toISOString();
+						}
+						else {
+							let inbirthday = new Date($('#birthday').val());
+							data.Name = $('#name').val();
+							data.Phone = $('#phone').val();
+							data.Email = $('#email').val();
+							data.Gender = false;
+							data.Address = $('#address').val();
+							data.Birthday = inbirthday.toISOString();
+						}
+						
+						console.log(data);
+
+
+						$.ajax({
+							method: 'post',
+							url: '/CustomerTVs/CreateJSON',
+							data: data
+						}).done(function (response) {
+							alert("successful");
+
+						}).fail(function (error) {
+							alert('Error :((')
+							console.log(error);
+						})
+					}
+					//Check Password
+					var password = document.getElementById("password")
+						, confirm_password = document.getElementById("confirm_password");
+
+					function validatePassword() {
+						if (password.value != confirm_password.value) {
+							confirm_password.setCustomValidity("Passwords Don't Match");
+						} else {
+							confirm_password.setCustomValidity('');
+						}
+					}
+					password.onchange = validatePassword;
+					confirm_password.onkeyup = validatePassword;
+				</script>

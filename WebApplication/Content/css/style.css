@@ -1,0 +1,234 @@
+
+
+
+/* ==========================================================================
+   PRICE SECTION
+   ========================================================================== */
+
+.active-div {
+    background: #83BEFF!important;
+}
+
+section
+{
+    background-color: lightgray;
+    padding: 110px;
+   
+}
+
+#pricing-section .plan-main {
+    background: #FFFFFF;
+list-style: none;
+margin: 0 0 20px;
+text-align: center;
+padding: 0;
+border-bottom: 1px solid #e1e1e1;
+border: 1px solid #E9E9E9;
+}
+
+    #pricing-section .plan-main li {
+        padding: 10px 0;
+        margin: 0 15px;
+        border-bottom: 1px dashed #eee;
+    }
+
+        #pricing-section .plan-main li.plan-name {
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        #pricing-section .plan-main li.plan-price {
+            color: #666;
+            padding: 15px 0;
+            font-size: 48px;
+        }
+
+        #pricing-section .plan-main li.plan-action {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-bottom: 0;
+        }
+
+   
+        #pricing-section .plan-main.featured .plan-price {
+            color: #fff;
+            background-color: #242424;
+            border-bottom-color: #52b6ec;
+            margin: 0;
+        }
+
+
+body.abc
+{
+  background-color: #00ca6d;
+}
+/*==========================================
+   SOCIAL ICON STYLES
+    =====================================================*/
+
+
+.color-facebook {
+    color: #3B5998;
+}
+
+.color-twitter {
+    color: #00aced;
+}
+
+.color-google-plus {
+    color: #dd4b39;
+}
+
+.color-linkedin {
+    color: #007bb6;
+}
+
+.color-pinterest {
+    color: #cb2027;
+}
+/* ===========================================================
+   COMPONENT.CSS  CHANGES   
+   ============================================================*/
+.slideshow nav span.nav-prev, .slideshow nav span.nav-next {
+left: 33%!important;
+
+}
+.slideshow {
+    z-index: 2000!important;
+}
+
+.slideshow nav span.nav-close {
+    color: #FF0000;
+
+    .slideshow nav span {
+        color: #FF0000;
+    }
+/* ===========================================================
+   SLIDER ADJUSTMENTS (slider.css)  
+   ============================================================*/
+
+     .slidesjs-container {
+            height:550px!important;
+        }
+#slides {
+    border:1px dashed #e1e1e1;
+    padding:0px 0px 15px 0px;
+}
+/* ===========================================================
+   BOOTSTRAP ELEMENTS CHANGES   
+   ============================================================*/
+.navbar {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.navbar-inverse {
+    background: #000;
+    border-color: #000;
+}
+
+    .navbar-inverse .navbar-nav > .active > a {
+        background: #ffffff;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: #fff;
+        font-weight: bolder;
+        font-size: 25px;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+
+    .navbar-inverse :hover .navbar-brand:hover {
+        color: #fff;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #FFFFFF;
+    }
+
+
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+
+
+#footer {
+    background-color: #000;
+    color: #fff;
+    padding: 5xpx;
+}
+
+body.xyz {
+    position:relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.center
+{
+    padding: 5px ;
+    margin: auto;
+    width: 20%;
+    background-color: red;
+}
+body.abc
+{
+    background-color: lightgrey;
+}
+
+.flex-box {
+    margin: 20px;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+/* HOVER*/
+
+.tam:hover .thongtin {
+    visibility: inherit;
+}
+
+/*Căn chỉnh HOVER*/
+
+.thongtin {
+    visibility:collapse;
+    position: relative;
+    color: black;
+    top: -190px;
+    height: 200px;
+    width: 320px;
+    text-align: left;
+    z-index: 2;
+    padding-bottom: 10px;
+    background-color: lightsteelblue;
+   
+}
+
+
+.register-image
+{
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: lightblue;
+
+}
+
+.f
+{
+    clear: both;
+    padding: 40px;
+    margin-top: -150px;
+}
+.span2
+{
+    text-align: center;
+}
+
+
